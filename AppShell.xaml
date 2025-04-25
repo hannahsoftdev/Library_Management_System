@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:LibraryManagementSystem.Views"
+    x:Class="LibraryManagementSystem.AppShell">
+  <Shell.Resources>
+    <ResourceDictionary>
+      <Color x:Key="HeaderBlue">#4A90E2</Color>
+      <Color x:Key="TabGray">#6678A8</Color>
+      <Color x:Key="DetailYellow">#FFFCD0</Color>
+      <Style TargetType="Frame" x:Key="CardFrame">
+        <Setter Property="CornerRadius" Value="12"/>
+        <Setter Property="HasShadow" Value="True"/>
+        <Setter Property="Padding" Value="16"/>
+        <Setter Property="Margin" Value="8"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+      </Style>
+      <Style TargetType="Frame" x:Key="HeaderFrame">
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="HasShadow" Value="False"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource HeaderBlue}"/>
+        <Setter Property="Padding" Value="16"/>
+      </Style>
+      <Style TargetType="Button" x:Key="TabButton">
+        <Setter Property="BackgroundColor" Value="{StaticResource TabGray}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="Margin" Value="4,0"/>
+        <Setter Property="FontSize" Value="16"/>
+      </Style>
+    </ResourceDictionary>
+  </Shell.Resources>
+  <TabBar>
+    <ShellContent Title="Members" Icon="members.png" ContentTemplate="{DataTemplate views:MembersPage}" />
+    <ShellContent Title="Books" Icon="books.png" ContentTemplate="{DataTemplate views:BooksPage}" />
+    <ShellContent Title="Transactions" Icon="transactions.png" ContentTemplate="{DataTemplate views:TransactionsPage}" />
+  </TabBar>
+</Shell>
